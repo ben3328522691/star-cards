@@ -548,8 +548,8 @@ function openReader(i){
   const vids = (typeof cardVideos !== 'undefined' && cardVideos[i]) ? cardVideos[i] : [];
   let media = vids.map(src=>'<video controls playsinline preload="metadata" src="'+src+'"></video>').join('');
   const showImgs = (vids.length && imgs.length) ? imgs.slice(1) : imgs;
-  media += showImgs.map(src=>'<img loading="lazy" alt="'+m.title+'" decoding="async" src="https://cdn.jsdelivr.net/gh/ben3328522691/star-cards@main/'+src+'" onerror="this.onerror=null;this.src=\''+src+'\'">').join('');
-  [i-1, i+1].forEach(j=>{ if(j>=0 && j<52 && typeof cardPhotos !== 'undefined' && cardPhotos[j]) cardPhotos[j].forEach(s=>{ const pi = new Image(); pi.src = 'https://cdn.jsdelivr.net/gh/ben3328522691/star-cards@main/' + s; }); });
+  media += showImgs.map(src=>'<img loading="lazy" alt="'+m.title+'" decoding="async" src="'+src+'">').join('');
+  [i-1, i+1].forEach(j=>{ if(j>=0 && j<52 && typeof cardPhotos !== 'undefined' && cardPhotos[j]) cardPhotos[j].forEach(s=>{ const pi = new Image(); pi.src = s; }); });
   rp.innerHTML = media;
   rp.classList.toggle('has', media.length>0);
   document.querySelector('.reader .sheet').scrollTop = 0;
