@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>我爱上思思的52个瞬间 · 四周年</title>
+<style>
+  :root{
+    --ink:#333a52; --ink-soft:#4a5069; --muted:#7a7f96;
+    --cream:#fffdf6; --heart:#cf5f76; --diamond:#8f86c9;
+    --club:#639a8a; --spade:#55679e; --accent:#57659f;
+    --serif:"Noto Serif SC","Songti SC","STSong","Source Han Serif SC","SimSun",serif;
+    --card-shadow:0 8px 20px rgba(60,70,110,.10), 0 2px 6px rgba(60,70,110,.06);
+  }
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    color:var(--ink); min-height:100vh; overflow-x:hidden;
+    background:#d7c8f0;
+  }
+  body::before{content:""; position:fixed; inset:-4%; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(1100px 520px at 85% -8%, rgba(255,214,236,.5), rgba(255,214,236,0) 60%),
+      radial-gradient(900px 480px at 8% 22%, rgba(168,199,245,.45), rgba(168,199,245,0) 62%),
+      radial-gradient(1000px 620px at 50% 108%, rgba(255,227,200,.55), rgba(255,227,200,0) 60%),
+      linear-gradient(180deg,#a5c4f1 0%,#bdb1ec 32%,#dfc0e9 55%,#f6cfe2 74%,#ffe9d2 100%);
+    background-size:auto,auto,auto,100% 175%;
+    animation:dawnDrift 18s ease-in-out infinite alternate;}
+  @keyframes dawnDrift{
+    from{transform:translate3d(0,-1%,0) scale(1.05); background-position:0 0,0 0,0 0,50% 0%;}
+    to{transform:translate3d(0,1%,0) scale(1.05); background-position:0 0,0 0,0 0,50% 100%;}
+  }
+  @media (prefers-reduced-motion: reduce){ body::before{animation:none;} }
+  #stars{position:fixed; inset:0; z-index:0; pointer-events:none;}
+  .grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.03; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");}
+  .wrap{position:relative; z-index:2; max-width:540px; margin:0 auto; padding:34px 18px 70px;}
+  header{text-align:center; padding:16px 0 4px;}
+  .kicker{font-size:10.5px; letter-spacing:.46em; text-indent:.46em; color:#5d6484; font-weight:600;}
+  h1{font-family:var(--serif); font-weight:600; font-size:31px; letter-spacing:.05em; line-height:1.42; margin-top:14px;
+     background:linear-gradient(118deg,#3c4c8c 0%,#7768bd 48%,#c05f7d 100%);
+     -webkit-background-clip:text; background-clip:text; color:transparent;
+     filter:drop-shadow(0 2px 14px rgba(255,255,255,.55));}
+  .rule{display:flex; align-items:center; justify-content:center; gap:10px; margin:16px auto 12px; color:#8b7fd4;}
+  .rule::before,.rule::after{content:""; height:1px; width:86px;
+    background:linear-gradient(90deg, rgba(139,127,212,0), rgba(139,127,212,.75));}
+  .rule::after{background:linear-gradient(90deg, rgba(139,127,212,.75), rgba(139,127,212,0));}
+  .rule span{font-size:12px;}
+  .sub{font-family:var(--serif); font-size:12.5px; color:#6a7194; letter-spacing:.32em; text-indent:.32em;}
+  .progress{margin:22px auto 4px; background:rgba(255,255,255,.55); border-radius:14px; padding:14px 16px;
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    box-shadow:0 5px 13px rgba(74,95,165,.07), inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.5);}
+  .progress .row{display:flex; justify-content:space-between; align-items:baseline; font-size:12.5px; letter-spacing:.18em; color:#4d5470;}
+  .progress .row b{font-family:var(--serif); font-size:17px; letter-spacing:.06em; color:#2e3550;}
+  .bar{height:6px; background:rgba(120,116,180,.18); border-radius:999px; margin-top:10px; overflow:hidden;}
+  .bar i{display:block; height:100%; width:0%; border-radius:999px;
+    background:linear-gradient(90deg,#a394dd,#7d90c2); transition:width .8s cubic-bezier(.22,.8,.3,1);}
+  .deck-zone{text-align:center; margin:26px 0 4px;}
+  .deck-zone p{font-size:12.5px; color:#4d5470; margin-top:14px; line-height:1.9; letter-spacing:.08em;}
+  .deck{width:158px; height:222px; margin:0 auto; position:relative; cursor:pointer;
+    animation:floaty 6s ease-in-out infinite; transition:transform .2s;}
+  .deck:active{transform:scale(.96);}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  .deck .mini{position:absolute; inset:0; border-radius:16px; overflow:hidden;
+    background:linear-gradient(155deg,#cfc2f2 0%,#e9c6e6 55%,#f9d9e4 100%);
+    border:1.5px solid rgba(255,255,255,.95); box-shadow:var(--card-shadow);}
+  .deck .mini::before{content:""; position:absolute; inset:7px; border-radius:11px;
+    border:1px solid rgba(255,255,255,.65); box-shadow:inset 0 0 0 3px rgba(255,255,255,.18);}
+  .deck .mini:nth-child(1){transform:rotate(-6deg) translate(-7px,3px);}
+  .deck .mini:nth-child(2){transform:rotate(4deg) translate(7px,1px);}
+  .deck .mini:nth-child(3){display:flex; align-items:center; justify-content:center; font-size:54px; color:#fff;
+    text-shadow:0 2px 14px rgba(74,95,165,.45);}
+  .deck .mini:nth-child(3) span{font-size:12px; position:absolute; bottom:16px; letter-spacing:.34em; text-indent:.34em; color:#fff;}
+  button.draw{margin-top:16px; border:0; cursor:pointer; font-family:var(--serif); font-size:15.5px; letter-spacing:.22em; text-indent:.22em;
+    color:#fff; background:linear-gradient(115deg,#55679e 0%,#7d74c2 55%,#a86ba4 100%); padding:13px 30px; border-radius:999px;
+    box-shadow:0 8px 18px rgba(87,101,159,.26), inset 0 1px 0 rgba(255,255,255,.35);}
+  button.draw:active{transform:scale(.97);}
+  .filters{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:26px 0 16px;}
+  .filters button{border:1px solid rgba(255,255,255,.85); background:rgba(255,255,255,.45); color:var(--ink-soft);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    padding:8px 15px; border-radius:10px; font-size:12.5px; letter-spacing:.1em; cursor:pointer;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7);}
+  .filters button.on{background:rgba(255,255,255,.92); color:#2e3550; font-weight:700;
+    box-shadow:0 6px 16px rgba(74,95,165,.18), inset 0 0 0 1px rgba(139,127,212,.35);}
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  .card{perspective:900px; aspect-ratio:5/7; cursor:pointer; animation:rise .55s both; animation-delay:calc(var(--d)*24ms);}
+  @keyframes rise{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+  .card-inner{position:relative; width:100%; height:100%; transform-style:preserve-3d;
+    transition:transform .5s cubic-bezier(.25,.8,.3,1);}
+  .card.flipped .card-inner{transform:rotateY(180deg);}
+  .face{position:absolute; inset:0; border-radius:10px; overflow:hidden;
+    backface-visibility:hidden; -webkit-backface-visibility:hidden;
+    background:linear-gradient(168deg,#fffef9 0%,#fdf8ec 58%,#f9efdd 100%);
+    box-shadow:var(--card-shadow), inset 0 0 0 1px rgba(255,255,255,.9), inset 0 0 0 5px #fdfaf1, inset 0 0 0 6px rgba(70,65,90,.14);}
+  .face .idx{position:absolute; display:flex; flex-direction:column; align-items:center; line-height:1.02; z-index:2;}
+  .face .idx .r{font-family:var(--serif); font-weight:700; font-size:14px;}
+  .face .idx .s{font-size:10.5px; margin-top:1px;}
+  .face .idx.tl{top:8px; left:9px;}
+  .face .idx.br{bottom:8px; right:9px; transform:rotate(180deg);}
+  .face .big{position:absolute; top:50%; left:50%; transform:translate(-50%,-56%); font-size:43px; line-height:1;}
+  .face .yr{position:absolute; bottom:11px; left:0; right:0; text-align:center; font-size:9.5px;
+    letter-spacing:.3em; text-indent:.3em; color:var(--muted);}
+  .face .todo{position:absolute; top:64%; left:0; right:0; text-align:center; font-size:10px;
+    letter-spacing:.34em; text-indent:.34em; color:#a3a7bb;}
+  .card.locked .face{filter:saturate(.5) brightness(1.01);}
+  .card.locked .face .big{opacity:.38;}
+  .face.back{transform:rotateY(180deg); padding:13px 11px 11px; display:flex; flex-direction:column; align-items:center; text-align:center;}
+  .face.back .ch{font-size:9.5px; letter-spacing:.3em; text-indent:.3em; color:var(--muted); margin-top:2px;}
+  .face.back .ttl{font-family:var(--serif); font-weight:600; font-size:15.5px; line-height:1.55; color:#2e3550; margin-top:7px;}
+  .face.back .orn{font-size:10px; margin:6px 0; opacity:.85;}
+  .face.back .txt{font-size:12px; line-height:1.85; color:var(--ink-soft); text-align:left;
+    display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; overflow:hidden;}
+  .face.back .more{margin-top:auto; font-size:10px; letter-spacing:.26em; text-indent:.26em; color:#9aa0b8;}
+  .face.back .emptyt{font-family:var(--serif); font-size:14px; color:#6d7390; margin-top:26px; line-height:1.7;}
+  .face.back .emptyh{font-size:10.5px; color:#9aa0b8; line-height:1.8; margin-top:8px; letter-spacing:.06em;}
+  .joker{margin-top:30px; text-align:center; padding:26px 18px 24px; border-radius:16px; position:relative;
+    background:linear-gradient(170deg, rgba(255,254,249,.78), rgba(253,244,236,.72));
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    box-shadow:0 8px 20px rgba(74,95,165,.10), inset 0 0 0 1px rgba(255,255,255,.9), inset 0 0 0 5px rgba(255,253,246,.65), inset 0 0 0 6px rgba(70,65,90,.14);}
+  .joker .seal{width:52px; height:52px; margin:0 auto 12px; border-radius:50%;
+    background:#cf5f76; color:#fff; font-family:var(--serif); font-size:17px; letter-spacing:.05em;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 14px rgba(207,95,118,.28), inset 0 1px 0 rgba(255,255,255,.45), inset 0 0 0 3px rgba(255,255,255,.22);}
+  .joker h2{font-family:var(--serif); font-size:17px; letter-spacing:.1em; margin-bottom:8px; color:#2e3550;}
+  .joker p{font-size:12.5px; color:var(--ink-soft); line-height:1.95; letter-spacing:.05em;}
+  .chapter{grid-column:1/-1; display:flex; align-items:baseline; gap:9px; margin:20px 2px 0;}
+  .chapter .ch-s{font-size:16px;}
+  .chapter .ch-y{font-family:var(--serif); font-size:16px; font-weight:600; letter-spacing:.12em;
+    background:linear-gradient(90deg,#46538a,#8a6fb8); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .chapter .ch-r{font-size:10px; letter-spacing:.1em; color:var(--muted);}
+  .chapter .ch-count{margin-left:auto; font-size:11px; letter-spacing:.12em; color:#6a7194; white-space:nowrap;}
+  .readmark{position:absolute; top:7px; right:9px; font-size:11px; color:#d9a441; text-shadow:0 1px 6px rgba(217,164,65,.5); z-index:3;}
+  .rnav{display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding-top:12px; border-top:1px solid rgba(90,95,130,.14);}
+  .rnav button{border:1px solid rgba(255,255,255,.9); background:rgba(255,255,255,.65); color:#4a5069; padding:8px 14px; border-radius:999px; font-size:12.5px; letter-spacing:.08em; cursor:pointer;}
+  .rnav button.off{opacity:.35; pointer-events:none;}
+  .rnav span{font-size:11.5px; letter-spacing:.12em; color:#7a7f96;}
+  .flycard{position:fixed; z-index:60; pointer-events:none; perspective:900px; transition:transform .85s cubic-bezier(.25,.8,.3,1), width .85s cubic-bezier(.25,.8,.3,1), height .85s cubic-bezier(.25,.8,.3,1), opacity .18s;}
+  .flycard.out{opacity:0;}
+  .fly-in{position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .6s cubic-bezier(.25,.8,.3,1) .25s;}
+  .fly-f{position:absolute; inset:0; border-radius:14px; backface-visibility:hidden; -webkit-backface-visibility:hidden; overflow:hidden; box-shadow:0 18px 34px rgba(60,70,110,.28);}
+  .fly-front{display:flex; align-items:center; justify-content:center; font-size:44px; color:#fff; background:linear-gradient(155deg,#cfc2f2 0%,#e9c6e6 55%,#f9d9e4 100%); border:1.5px solid rgba(255,255,255,.95);}
+  .fly-back{transform:rotateY(180deg); background:linear-gradient(168deg,#fffef9 0%,#fdf8ec 58%,#f9efdd 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:16px; text-align:center;}
+  .fly-ch{font-size:10px; letter-spacing:.3em; text-indent:.3em; color:#7a7f96;}
+  .fly-ttl{font-family:var(--serif); font-size:17px; font-weight:600; color:#2e3550; line-height:1.5;}
+  .joker.celebrate{animation:jokerGlow 1.4s ease-in-out 3;}
+  @keyframes jokerGlow{0%,100%{box-shadow:0 8px 20px rgba(74,95,165,.10), inset 0 0 0 1px rgba(255,255,255,.9), inset 0 0 0 5px rgba(255,253,246,.65), inset 0 0 0 6px rgba(70,65,90,.14);}50%{box-shadow:0 0 0 6px rgba(207,95,118,.22), 0 14px 34px rgba(207,95,118,.30), inset 0 0 0 1px rgba(255,255,255,.95), inset 0 0 0 5px rgba(255,253,246,.65), inset 0 0 0 6px rgba(70,65,90,.14);}}
+  .jkcards{display:flex; gap:14px; justify-content:center; margin-top:16px;}
+  .jkcard{width:104px; height:146px; border-radius:10px; position:relative; cursor:pointer;
+    background:linear-gradient(168deg,#fffef9 0%,#fdf8ec 58%,#f9efdd 100%);
+    box-shadow:0 8px 18px rgba(74,95,165,.13), inset 0 0 0 1px rgba(255,255,255,.9), inset 0 0 0 5px #fdfaf1, inset 0 0 0 6px rgba(70,65,90,.14);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+    filter:saturate(.55); opacity:.72; transition:transform .25s, box-shadow .25s;}
+  .joker.unlocked .jkcard{filter:none; opacity:1;}
+  .joker.unlocked .jkcard:hover{transform:translateY(-4px);}
+  .jkcard .jk{font-size:11px; letter-spacing:.35em; text-indent:.35em; color:#9aa0b8;}
+  .jkcard .jkt{font-family:var(--serif); font-weight:600; font-size:20px; color:#2e3550;}
+  .jkcard.small .jkt{color:#8f86c9;}
+  .jkcard.big .jkt{color:#cf5f76;}
+  .jkcard .jks{font-size:9px; letter-spacing:.24em; text-indent:.24em; color:#9aa0b8;}
+  .joker.unlocked .jkcard.big{box-shadow:0 8px 22px rgba(207,95,118,.22), 0 0 26px rgba(232,160,178,.45), inset 0 0 0 1px rgba(255,255,255,.9), inset 0 0 0 5px #fdfaf1, inset 0 0 0 6px rgba(70,65,90,.14);}
+  .letter p{opacity:0; animation:lfade 1.1s ease forwards; margin-bottom:1.05em;}
+  @keyframes lfade{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
+  .letterEmpty{color:#9aa0b8; text-align:center;}
+  .jkbtn{display:block; margin:18px auto 2px; border:0; cursor:pointer; font-family:var(--serif);
+    font-size:14px; letter-spacing:.14em; color:#fff; padding:10px 22px; border-radius:999px;
+    background:linear-gradient(120deg,#cf5f76,#8f86c9); box-shadow:0 8px 18px rgba(160,90,130,.30);}
+  /* 大王翻开后（2026-11-13 晚用户新方案 + ChatGPT 讨论）：不放信，只有一束花和「向左看」——答案在屏幕之外、她的左边。 */
+  .bqScene{text-align:center; padding-top:2px;}
+  .bqSvg{width:min(264px,80%); height:auto; animation:bqIn 1.5s cubic-bezier(.25,.8,.3,1) both;}
+  @keyframes bqIn{from{opacity:0; transform:scale(.955) translateY(10px);} to{opacity:1; transform:scale(1) translateY(0);}}
+  .bqSvg .petal{animation:petalDrift 5.5s ease-in-out infinite;}
+  .bqSvg .petal.p2{animation-delay:1.4s;}
+  .bqSvg .petal.p3{animation-delay:2.7s;}
+  @keyframes petalDrift{0%,100%{transform:translate(0,0) rotate(0deg); opacity:.95;} 50%{transform:translate(-13px,7px) rotate(-14deg); opacity:.55;}}
+  .lookLeft{font-family:var(--serif); font-weight:600; font-size:31px; letter-spacing:.52em; text-indent:.52em;
+    color:#474168; margin-top:10px; animation:llIn 1.1s ease .6s both;}
+  @keyframes llIn{from{opacity:0; transform:translateY(9px);} to{opacity:1; transform:none;}}
+  @media (prefers-reduced-motion: reduce){ .bqSvg, .bqSvg .petal, .lookLeft{animation:none;} }
+  footer{margin-top:28px; text-align:center; font-size:11px; color:#5d6484; line-height:2; letter-spacing:.14em;}
+  .toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px); opacity:0;
+    background:rgba(43,50,69,.92); color:#fff; font-size:13px; padding:11px 20px; border-radius:999px;
+    transition:all .3s; z-index:30; white-space:nowrap; pointer-events:none; letter-spacing:.06em;
+    box-shadow:0 10px 24px rgba(43,50,69,.35);}
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  .reader{position:fixed; inset:0; z-index:40; display:flex; align-items:center; justify-content:center; padding:22px;
+    background:rgba(38,44,66,.45); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    opacity:0; pointer-events:none; transition:opacity .35s;}
+  .reader.open{opacity:1; pointer-events:auto;}
+  .reader .sheet{position:relative; width:100%; max-width:430px; max-height:82vh; overflow-y:auto; border-radius:22px;
+    padding:36px 28px 28px; text-align:center;
+    background:linear-gradient(172deg,#fffef9 0%,#fdf6ea 60%,#fbeedd 100%);
+    box-shadow:0 30px 60px rgba(30,36,60,.35), inset 0 0 0 1px rgba(255,255,255,.9), inset 0 0 0 5px #fdfaf1, inset 0 0 0 6px rgba(70,65,90,.14);
+    transform:translateY(16px) scale(.975); transition:transform .38s cubic-bezier(.25,.9,.3,1.05);}
+  .reader.open .sheet{transform:none;}
+  .reader .rch{font-size:10.5px; letter-spacing:.34em; text-indent:.34em; color:var(--muted);}
+  .reader .rorn{font-size:13px; margin:12px 0 4px;}
+  .reader .rttl{font-family:var(--serif); font-weight:600; font-size:22px; line-height:1.55; color:#2e3550; margin:6px 0 4px;}
+  .reader .rdiv{width:54px; height:1px; margin:14px auto; background:linear-gradient(90deg, rgba(139,127,212,0), rgba(139,127,212,.8), rgba(139,127,212,0));}
+  .reader .rtxt{font-size:15px; line-height:2.05; color:#3c435e; text-align:left; letter-spacing:.02em;}
+  .reader .rphotos{display:none; margin:2px 0 8px;}
+  .reader .rphotos.has{display:block;}
+  .reader .rphotos img{width:100%; border-radius:14px; display:block; margin:0 auto 10px;
+    box-shadow:0 10px 24px rgba(60,70,110,.20);}
+  .reader .rphotos img:last-child{margin-bottom:2px;}
+  .reader .rphotos video{width:100%; border-radius:14px; display:block; margin:0 auto 10px;
+    box-shadow:0 10px 24px rgba(60,70,110,.20); background:#141a30;}
+  .reader .rfoot{margin-top:20px; font-size:10.5px; letter-spacing:.3em; text-indent:.3em; color:#9aa0b8;}
+  .reader .rclose{position:absolute; top:10px; right:12px; border:0; background:transparent; cursor:pointer;
+    font-size:16px; color:#9aa0b8; width:34px; height:34px;}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="grain"></div>
+<div class="wrap">
+  <header>
+    <div class="kicker">OUR 4TH ANNIVERSARY · EST. 2022</div>
+    <h1>我爱上思思的<br>52 个瞬间</h1>
+    <div class="rule"><span>✦</span></div>
+    <div class="sub">四周年 · 2022–2026 · 1461 天</div>
+  </header>
+
+  <div class="progress">
+    <div class="row"><span>已点亮的星</span><b id="count">0 / 52</b></div>
+    <div class="bar"><i id="bar"></i></div>
+  </div>
+
+  <div class="deck-zone">
+    <div class="deck" id="deck" title="抽一张牌">
+      <div class="mini"></div><div class="mini"></div>
+      <div class="mini">✦<span>抽一张</span></div>
+    </div>
+    <p>点牌堆抽一张，翻开读一个瞬间<br>读完的瞬间，会变成天上的一颗星</p>
+    <button class="draw" id="drawBtn">抽一张牌</button>
+  </div>
+
+  <div class="filters" id="filters">
+    <button data-f="all" class="on">全部</button>
+    <button data-f="♥">♥ 第一年</button>
+    <button data-f="♦">♦ 第二年</button>
+    <button data-f="♣">♣ 第三年</button>
+    <button data-f="♠">♠ 第四年</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="joker">
+    <div class="seal">53</div>
+    <h2>第 53 张 · 大小王</h2>
+    <p id="jokerText">集齐 52 张后解锁 —— 先翻小王，再翻大王。最后的答案，不在屏幕里。<br>现在还锁着，等 52 颗星连成爱心那天。</p>
+    <div class="jkcards">
+      <div class="jkcard small" id="jkSmall"><div class="jk">小 王</div><div class="jkt">永远</div><div class="jks">JOKER</div></div>
+      <div class="jkcard big" id="jkBig"><div class="jk">大 王</div><div class="jkt">？</div><div class="jks">JOKER</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="javascript:void(0)" id="resetLink" style="color:#9aa0b8; text-underline-offset:3px;">重新开始 · 清空点亮进度</a>
+  </footer>
+</div>
+
+<div class="reader" id="reader">
+  <div class="sheet">
+    <button class="rclose" id="readerClose" aria-label="关闭">✕</button>
+    <div class="rch" id="readerChapter"></div>
+    <div class="rorn" id="readerOrn"></div>
+    <div class="rttl" id="readerTitle"></div>
+    <div class="rdiv"></div>
+    <div class="rphotos" id="readerPhotos"></div>
+    <p class="rtxt" id="readerText"></p>
+    <div class="rfoot">这颗星，已为你点亮</div>
+    <div class="rnav" id="readerNav">
+      <button id="navPrev">‹ 上一张</button>
+      <span id="navPos"></span>
+      <button id="navNext">下一张 ›</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* 内容规则：52 条只能由用户亲口提供，这里一律留空，绝不编造。 */
+const SUITS = [
+  {s:'♥', color:'#cf5f76', year:'第一年', range:'序章 – 2022-12-31'},
+  {s:'♦', color:'#8f86c9', year:'第二年', range:'2023-01-01 – 2023-12-31'},
+  {s:'♣', color:'#639a8a', year:'第三年', range:'2024-01-01 – 2024-12-31'},
+  {s:'♠', color:'#55679e', year:'第四年', range:'2025-01-01 – 2026-11-19'},
+];
+const RANKS = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+/* moments[i] = null 表示该瞬间尚未提供；填入后格式为 {title, text} */
+const moments = new Array(52).fill(null);
+/* ♥A 第一次见面（2026-11-12 用户口述，年份已确认：2020） */
+moments[0] = {title:'我们好像会有故事', text:'2020年9月1日，初一开学。我走进教室往左一看，她披着头发站在那儿。那一瞬，感觉全世界都慢了下来，那一秒很长很长。'};
+/* ♥2 好友请求（2026-11-12 用户口述，附 2022-09-28 QQ 聊天截图） */
+moments[1] = {title:'天冷，加衣，想你', text:'暗恋了很久，一直不敢跟她说话，只敢偷偷翻她的QQ空间。2022年9月28日，初三，疫情在家上课。我怕以后再也见不到她，决定勇敢一次，用抖音上学来的这句话发去了好友请求。她劈头盖脸把我骂了一顿，第一句是：“你有毒吗？”我们的故事，就这样开始了。'};
+/* ♥3 第一次一起听歌（2026-11-12 用户口述，附一起听截图） */
+moments[2] = {title:'Golden Hour', text:'2022年10月6日，我得了肠胃炎，在社区医院打针。思思关心我，提议我们一起听歌。第一首是《Golden Hour》，第二首是《100》——一首对我们很有意义的歌。就像歌名一样，和你在一起的每一秒，都是我一生中的 golden hour。'};
+/* ♥4 她的眼睛（2026-11-12 用户口述，附她眼睛特写照片；照片上牌留待调试时加） */
+moments[3] = {title:'宝石沦为赝品，你的眼眸才是真迹', text:'我一直觉得思思的眼睛特别特别好看，大大圆圆的，还有灵气。刚加她QQ时我一直是匿名的，直到表白那天才说我是谁——其实她早就猜到了。我告诉她，我是因为觉得她的眼睛好看，才喜欢上了“那个女生”。她说，她觉得很浪漫。宝石沦为赝品，你的眼眸才是真迹。'};
+/* ♥5 走丢的小狗（2026-11-13 凌晨用户口述，附聊天截图与小狗照片） */
+moments[4] = {title:'她永远是那么善良', text:'2022年10月23日，她在小区里看到一只小狗，担心它走丢了，拍照问我该怎么办。她永远是那么善良、纯粹，对小动物永远有那样的关心——不仅那一次，后来也经常这样。她给我拍的照片里，还不小心露出了她特别可爱的玉桂狗拖鞋。'};
+/* ♥6 暧昧期（2026-11-13 凌晨用户口述，附抖音评论截图） */
+moments[5] = {title:'不变的定数', text:'在一起之前，我们有一段暧昧期。那段时间，我们常在抖音评论区互动：一支讲“这个世界从头到尾就只有你自己”的视频下面，她@我说：“不变的定数。”烟花视频下面，她回我：“剧本是得愿所偿。”现在想起那段日子，就好像在告诉我们——我们的恋爱，要开始了。'};
+/* ♥7 “谢谢”（2026-11-13 下午用户口述，附特仑苏世界杯联名牛奶照片；标题引号按用户要求加） */
+moments[6] = {title:'“谢谢”', text:'2022年11月9日的一个早上。她每天早上都会一个人在楼道里背书。那天，我买了一瓶世界杯联名的特仑苏牛奶，偷偷拿去送给她。那时候我们一直都只在线上交流，到了线下，因为没有经验、又都很害羞，反而像陌生人一样。我把牛奶递给她的时候，她跟我说了一句：“谢谢。”'};
+/* ♥8 爱心（2026-11-13 下午用户口述，附她拍下的照片；标题为用户指定） */
+moments[7] = {title:'爱心', text:'2022年11月12日。那时候还在上学，有一天早上，我花了一整个早上的时间，把回形针折成两个爱心的形状。等到中午教室空无一人的时候，我把它们放到她书桌的眼镜上。午休结束，她回来就发现了眼镜上的两个小爱心——这张照片，就是她当时拍下来的。'};
+/* ♥9 在一起的那天（2026-11-13 凌晨用户口述，附当晚聊天截图） */
+moments[8] = {title:'和你一起走向未来', text:'2022年11月19日晚，我逗她说，我要去跟我喜欢的女生表白了。她有点伤心，说：“我不想和你断。”我说其实我喜欢的女生，就是你——我想和你一起走向未来。她从不敢相信，到慢慢接受——就这样，我们在一起了。后来她老跟我念叨，说我欠她一次正式的表白。是呀，对我最爱的人说爱她，怎么能简单呢。'};
+/* ♥10 在一起后的第一天（2026-11-13 下午用户口述，附网易云一起听聊天截图） */
+moments[9] = {title:'对某人，我也一直有时间', text:'2022年11月20日，在一起后的第一天。周末要结束了，第二天都要返校上课，我们一边补作业，一边在网易云一起听歌。相距14.35公里，那天一起听了7小时53分钟。我在聊天里说：“下次不用问，直接拉我就好啦——对某人，我都有时间～”她回：“好～对某人，我也一直有❤️”刚在一起的第一天，连补作业都是甜的。'};
+/* ♥J 我们都会一起变好的（2026-11-13 下午用户口述，附QQ空间留言板截图） */
+moments[10] = {title:'我们都会一起变好的', text:'2022年11月20日，在一起后的第一天。她是个很敏感、心思也很细的女生。那天，她一个人在QQ空间的留言板上写了一句：“病号，我会变成更好的人的。”我们两个都很看重成长，早就说过，要陪对方一起走向未来，一起长大。我在下面回她：“我们都会一起变好的。”'};
+/* ♥Q 第一个生日（2026-11-13 下午用户口述，标题为用户指定，附生日礼物照片） */
+moments[11] = {title:'第一个生日', text:'2022年12月1日，我的生日，是我们在一起后第一次一起过生日。之前的聊天里，她知道了我喜欢科比，知道我喜欢的歌手，还知道我喜欢小猫、喜欢夏天、喜欢雨天。她把我所有的爱好都记住了，给我准备了这份生日礼物：一张拼着我喜欢的一切的拼贴画、一张篮球立体贺卡，还有一条小狮子手链。这是她送我的第一份生日礼物。'};
+/* ♥K 只差两天（2026-11-13 下午用户口述，附顺丰快递箱与草莓熊玩偶照片） */
+moments[12] = {title:'只差两天', text:'2022年12月3日，她的生日，我给她寄了一只草莓熊玩偶当生日礼物。我的生日是12月1日，我们的生日只差两天。就这么近，好像在告诉我们，我们永远都是相似的，永远能理解对方，永远能共鸣。可差着的这两天，又好像在提醒我：我始终比你大，不管大多少，我也始终愿意做更成熟的那一个，永远走在你的前面。'};
+/* ♦A 一起上西联（2026-11-13 下午用户口述，标题为用户指定，附跨年夜聊天截图） */
+moments[13] = {title:'一起上西联', text:'2023年1月22日，春节，零点刚过。她发来“新年快乐”，说：“少生病，多开心。我们要一起上西联哦。”我回她：“新年快乐～好好吃饭，每天开心。”那时候我们正面临中考，最大的目标，就是一起考上西联。其实我们对未来有很多不确定，也有害怕——怕中考之后就此结束，怕这只是一段短暂的校园恋情。可是那个时候总觉得，只要有她在，这些就都不会再害怕了。'};
+/* ♦2 小鸡炖蘑菇（2026-11-13 下午用户口述，附小兔子挂件照片） */
+moments[14] = {title:'小鸡炖蘑菇', text:'2023年3月29日，中考口语考试临近。那天学校组织春游，去了七彩云南欢乐世界。春游结束回到学校，正赶上要过周末，她把我叫到教学楼里，神神秘秘地跟我对暗号：“天王盖地虎，下一句是什么？”我说：“小鸡炖蘑菇。”她笑了，然后把这只小兔子挂件给了我。'};
+/* ♦3 山海（2026-11-13 下午用户口述，附朋友圈截图） */
+moments[15] = {title:'山海', text:'2023年4月4日，我发了一条朋友圈，配的是我以前得的一堆奖牌，文案只有两个字：“山海。”那是我特别喜欢的一首歌——以前的自己看到现在的自己，可能会失望、会沮丧，因为好像没有成为想象中的样子。我以前很优秀，拿过很多成就，可那段时间总觉得自己慢慢没那么优秀了，不再特别，不再能让人看到闪光点。她在下面评论：“注意你好久了，你已被我看重，速速放下羞涩交出联系方式。”很多时候，她永远是第一个看到我闪光点的人。'};
+/* ♦4 你眼中的我（2026-11-13 下午用户口述，附抖音感官拼图） */
+moments[16] = {title:'你眼中的我', text:'2023年5月1日，我们做了一个用多感官形容对方的小游戏。这一张是她眼中的我——左上角的深蓝，是她眼中我的颜色，她觉得我神秘、深邃；右上角的水上茶盏，是她觉得我身上的味道，是茶香；左边的橘猫，是她用动物来形容我；右边的绿藤窗户，是她用季节来形容我，她觉得我像夏天；左下角的白山茶，是她用花来形容我，那是她那时候最喜欢的花；右下角的灰色羊毛毯，是她用质感来形容我。'};
+/* ♦5 我眼中的你（2026-11-13 下午用户口述并逐格讲解，附感官拼图，与♦4成对） */
+moments[17] = {title:'我眼中的你', text:'2023年5月1日，还是那个用多感官形容对方的小游戏。这一张是我眼中的她——左上角的白色，是我眼中她的颜色，她很纯粹、很洁白、很可爱；右上角的牛奶，是她身上的味道，一种我描述不出来、却让我很有安全感的味道；左边的小白狗，是我用动物来形容她，它戴着蓝色发夹，特别像她，可爱，又对她爱的人非常热情；右边的阳光，是我用季节来形容她，是夏天，因为夏天是她最喜欢的季节；左下角的白山茶，是我用花来形容她，因为我知道那是她最喜欢的花；右下角的白色毛绒毯子，是她的质感，和她在一起的时候，我总是很幸福、很有安全感。选那只小狗，可能是因为她那时候在朋友圈发过这张照片，她也戴着蓝色的发卡——我当时觉得她特别可爱、特别美丽。'};
+/* ♦6 文明观鸥（2026-11-13 下午用户口述，附海埂大坝文明观鸥牌子照片） */
+moments[18] = {title:'文明观鸥', text:'2023年5月2日，我们一起走在海埂大坝上，边散步边聊天。那天看到一块“文明观鸥”的牌子，牌子上那只海鸥长得特别搞笑，我们两个就站在那儿笑它，然后拍下了这张照片。'};
+/* ♦7 夏天快快快来（2026-11-13 下午用户口述，年份经核对确认为2023年，附教室互动板照片） */
+moments[19] = {title:'夏天快快快来', text:'2023年6月10日，中考前，我拍下我们班教室门口的互动板。板上写着“一个充满糖果气息的夏天”，最下面那句“夏天快快快来～”是她写的，我在后面悄悄加了个“+1201”——1201是我的生日，这是只有我们两个懂的默契和秘密。夏天是我们两个最喜欢的季节，它代表着热情、热烈，代表着青春的活力。在枯燥乏味的学习生活里，我们也一直有着这样浪漫的互动。'};
+/* ♦8 中考加油（2026-11-13 下午用户口述，标题为用户指定，无照片） */
+moments[20] = {title:'中考加油', text:'2023年6月16日，中考的前一天。那天我们班搬到一个新教室一起自习，顶着中考马上要来的压力。晚上我发现，她给我的第一个小皮筋被我弄丢了，我就给她写了一张小纸条。她看了哈哈大笑，说：“没事，我可以给你一个新的。中考加油。”其实后来，我又把那个小皮筋找到了。'};
+/* ♦9 jsy666（2026-11-13 下午用户口述，附抖音聊天截图） */
+moments[21] = {title:'jsy666', text:'2023年7月11日，抖音上的一张聊天截图，是她那边截的图。我发“我是不是很迅速啊”“快夸我”，她回“太厉害啦”“jsy666”，还给我贴了“绝”和“666”。这张截图代表着我们的一个时期：无论在一起多久，我们的互动、互相对对方说的话，永远是甜蜜而真挚的。她是一个非常棒的女孩。我总想带着她、帮她完成所有的事情；而只要她告诉我，她独立完成了什么事，不管大事还是小事，我都想要夸她。而“jsy666”，是她说的、属于我们两个的专属密码。'};
+/* ♦10 最热烈的夏天（2026-11-13 下午用户口述，附云南省博物馆银饰照与牵手照） */
+moments[22] = {title:'第一个热烈的夏天', text:'2023年7月19日，中考结束，我们一起去云南省博物馆玩。逛完出来，在路上散步的时候，又牵着手拍了照片。那是我们在一起之后，第一个最自由的夏天——无拘无束，最热烈的夏天，来了。'};
+/* ♦11 脆皮书屋（2026-11-13 下午用户口述，附照片三张） */
+moments[23] = {title:'脆皮书屋', text:'2023年8月7日，中考假快收假了。那时我们都觉得，到了高中可能不会再在一个班，带着这样的未知和忐忑，我们在翠湖旁边的橡皮书店见了面。后来我们就一直叫它脆皮书屋。那一天，我还第一次见到了她的黄色小兔子——咻咻。她很喜欢我们那天一起拍的照片。其实最后，我们还是在了一个班。'};
+/* ♦12 小鱼（2026-11-13 下午用户口述，附小鱼皮筋照） */
+moments[24] = {title:'小鱼', text:'2023年8月7日，她给了我第二条小皮筋，上面有一条小鱼。她的名字里有一个「语」字，谐音就是「鱼」。小皮筋对我们来说，是一个非常关键的意象——之前我跟她说过，她给我的第一条小皮筋，被我戴坏了。好像不管我跟她说什么，她永远都能记住。后来，她就给了我这第二条。'};
+/* ♦13 5.2公里的奖牌（2026-11-13 下午用户口述，附美乐蒂奖牌照；第二年收官） */
+moments[25] = {title:'5.2公里的奖牌', text:'2023年9月2日，高中已经开学了。暑假的时候，我在 Keep 上跑了5.2公里，拿到了这块美乐蒂的奖牌——那时候她特别喜欢美乐蒂，这块奖牌，是我专门为她跑出来的。开学后的一个周五，放学后，我们在学校的楼道里，我把奖牌给了她。这标志着，我们的高中生活开始了。'};
+/* ♣A 我们的2024来啦（2026-11-13 下午用户口述，附跨年信息截图） */
+moments[26] = {title:'我们的2024来啦', text:'2024年1月1日，零点刚过，我们在信息里互相送上新年祝福。她说：「我陪着你。」我说：「新年快乐～宝宝～我们都会陪着对方长大哒～～」她说：「我们的2024来啦。」我们永远都会陪着对方一起长大，就这样一起成长下去。'};
+/* ♣2 北京（2026-11-13 下午用户语音转文字、助手润色后经用户确认，标题为用户指定，附照片三张） */
+moments[27] = {title:'北京', text:'2024年1月24日，当时正好学校组织我们去北京研学，我们一起去了北京环球影城。我们先去看了她最喜欢的《驯龙高手》的演出，后来又一起去了哈利·波特主题区、功夫熊猫主题区。等到晚上的时候，我们一起在那里看了烟花。虽然它不能算是严格意义上的旅行，但这也是我和她第一次一起离开昆明。'};
+/* ♣3 返程（2026-11-13 下午用户语音转文字、助手润色，单独成牌、日期为用户指定，附返程高铁照片） */
+moments[28] = {title:'返程', text:'2024年1月26日，这张照片是我们当时从北京坐高铁回昆明的返程路上、快到站的时候拍的。那个时候我们两个都非常伤心，因为它不仅代表着我们这一段旅程结束了，而且那也是我们在同一个班的最后一段时间了。以后会怎么样，我们心里同样还是有那样的忐忑不安，还有对不确定的恐惧。那个时候，我看着她那么难受，我不仅伤心，也非常心疼，就好像我希望自己永远都可以陪着她。'};
+/* ♣4 前后桌（2026-11-13 下午用户语音转文字、助手润色，标题为用户指定，附 CCD 照片四张） */
+moments[29] = {title:'前后桌', text:'2024年4月6日，这是她当时用她在学校的 CCD 拍下的照片，拍的是我们高一还在一个班的时候相处的一些瞬间。其中也包括全班同学一起给我过生日的时候，大家对我的祝福，她也拍了下来。那个时候让我感到的是，好像我们永远都是这样关心着对方，对方的事情永远都是我们共同的事情。无论何时何地，我们永远都会怀念那一段——我们坐在同一个教室的前后排，在上完课之后、烦恼和疲倦的间隙里，互相打闹的瞬间。'};
+/* ♣5 古灵精怪（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附她和咻咻的合照一张） */
+moments[30] = {title:'古灵精怪', text:'2024年7月24日，这是她和咻咻的合照。有的时候，她非常愿意给我发这些可爱、古灵精怪的照片。每当我不在她身边的时候，只要看到她给我发的这些照片，我瞬间就觉得无比幸福、无比快乐，就好像我永远都在爱人的身边。'};
+/* ♣6 蔚蓝（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附香水礼盒与手写香评照片两张） */
+moments[31] = {title:'蔚蓝', text:'2024年8月19日，这是她送我的第一瓶香水，香奈儿的蔚蓝。当时我们一起去私人影院看电影，等看完的时候，她把这份礼物给了我。这对于我的人生、对于我们两个来说，都是一个非常重要的时刻。这也是我人生中的第一瓶香水。'};
+/* ♣7 730天（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附两周年蛋糕照片三张） */
+moments[32] = {title:'730天', text:'2024年11月16日，这是我们两周年前最后一个周末。因为两周年当天我们正在学校、不能相见，那天我们一起去商场吃了顿饭，之后吹了这样一个可爱的蛋糕。'};
+/* ♠1 I love you（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附三年跨年祝福拼图视频的定格图） */
+moments[33] = {title:'I love you', text:'2025年1月1日，从2023年开始，每一年跨年的时候，她都会给我发这么一段祝福，我们也会互相给对方发祝福。但一直到2025年，我才知道她过去给我发的那些是什么意思——它们共同组成了一个 I love you。其实那一刻，我感到的是非常的惊喜，以及感动。'};
+/* ♠2 做个梦给你（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附亚朵星球枕头与她手写卡片照片一张） */
+moments[34] = {title:'做个梦给你', text:'2025年2月10日，她好像永远能够记住我跟她说过的每一个细节。有一天，我跟她说起，我打算买一个亚朵的星空枕。后来在下一次见面的时候，她就把这个枕头当作礼物给了我。当时我非常感动，也非常惊喜。她后来给我发了这张图片，里面有一句“做个梦给你”——这是《水星记》里面的歌词，以前我们都非常喜欢听这首歌，这句词也非常切合我们的故事。'};
+/* ♠3 她的背影（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附她高中校服背影照片一张） */
+moments[35] = {title:'她的背影', text:'2025年3月8日，这是我们高中的一个周末，周五放学之后要离校的时候，我偷偷拍的她的背影。对于我们两个来说，高中的时候在一起相处的记忆，好像绝大多数都是在周末——两个人躲在楼道里，一起分享这一周发生的事情。'};
+/* ♠4 爱一只猫（2026-11-13 下午用户语音转文字、助手润色，标题为用户亲口所定，附她的小文截图一张） */
+moments[36] = {title:'爱一只猫', text:'2025年10月8日，她永远都是这样一个文采非常好、敏感、心思缜密的小女孩。那个时候，我们的感情陷入了一段小小的危机，她觉得我没有她想象中的那么成熟。可是因为我们两个都足够地爱对方，所以即使是在那段最困难的时候，我们也始终相信，我们可以一起度过下去。'};
+/* ♠5 翠湖（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附她在翠湖边等他的银杏照片一张） */
+moments[37] = {title:'翠湖', text:'2025年10月12日，这是她当时在翠湖边上等我的照片。经历了长达一个月的矛盾和冷战之后，那天，我从学校请假出来，直接跑去了翠湖边上，和她一起聊天。虽然那个时候我们并不知道那天会发生什么，但等到我们真正见到对方的时候，好像问题都迎刃而解了。我们坐在翠湖边上，一直聊呀聊，把很多以前的困惑、以前的矛盾、以前的误解，都说清了。'};
+/* ♠6 想念（2026-11-13 下午用户语音转文字、助手润色，标题用户亲口所定，附她艺考时发的玫红西装比心照片一张） */
+moments[38] = {title:'想念', text:'2025年11月21日，2025年的冬天，是她艺考的时候。那段时间，她在机构里，每天跟我讲述她是如何克服内心的矛盾、内心的恐惧的，每天还要跟我分享在学校里发生了什么，偶尔也会给我发一些可爱的照片。那个时候，我心里除了对她的心疼，还有就是无尽的想念。'};
+/* ♠7 自己的英雄主义（2026-11-13 下午用户语音转文字、助手润色，标题用户亲口所定，附她零点生日祝福截图两张） */
+moments[39] = {title:'自己的英雄主义', text:'2025年12月1日，我的18岁生日。零点刚过，她发来消息：「十八岁快乐，本本。」她说：「之前在稿件里听过一句话，‘我听闻最美的故事，是公主死去了，屠龙的少年还在燃烧。’我喜欢这篇稿件里的少年心气……希望你某个人生季节的少年心气，仍能在十八岁的对岸燃起熊熊大火，自在摇曳，生生不息。」对于每一个人来说，成年的那一天永远是人生中非常重要的节点。就像她跟我说的那样，我希望我心中的少年心气永远不会失去，我会永远陪着她，走在她的前面，帮她克服所有的困难。'};
+/* ♠8 你自当山（2026-11-13 下午用户语音转文字、助手润色，标题用户亲口所定，附他零点定时生日信截图一张） */
+moments[40] = {title:'你自当山', text:'2025年12月3日，她的18岁生日。我提前设了零点的定时消息，信里写：「宝宝18岁生日快乐！……对我而言，有你就是我对幸福的想象……我永远会在你身边接住你的痛苦，爱你。」零点那一刻，我刚刚从昆明飞到北京——因为她当时正在艺考，我没有告诉她我去北京看病的消息。就像我在这封信里跟她说的那样，我永远都陪着她，我爱她。'};
+/* ♠9 再坚持一下（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附她打针时发的搞怪涂鸦自拍一张） */
+moments[41] = {title:'再坚持一下', text:'2026年4月18日，这是我们备战高考前一个半月的时候，她突然生病了，去医院打针时给我拍的照片。那个时候，即将面对高考的压力没有压垮我们，反而告诉我们的是：再坚持一下，马上，属于我们的那个夏天、我们的未来，就要开始了。'};
+/* ♠10 珠海！！（2026-11-13 下午用户语音转文字、助手润色，标题用户亲口所定，附珠海海边夜景照片三张） */
+moments[42] = {title:'珠海！！', text:'2026年6月15日，我们的第一次旅行来啦。经过深思熟虑之后，我们在高考之后去到了美丽的城市珠海。这是当时我们在珠海，晚上在海边的步道上，一边吹着海风，喝着椰子水，在海边散步的照片。那个时候，我们是世界上最幸福、最惬意的人。'};
+/* ♠11 澳门（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附澳门威尼斯人等照片六张） */
+moments[43] = {title:'澳门', text:'2026年6月17日，这是我们一起在澳门威尼斯人商场里面的照片。那天下午，我们突然决定从珠海去到澳门，临时订了酒店。在威尼斯人里面，我们差点迷路了，我甚至都动用了指南针在那里找方向。虽然当时我自己没有什么想法，但是她却看出来了我的耐心、我解决问题的能力。'};
+/* ♠12 有歹徒（2026-11-13 下午用户亲口给的标题与正文，正文就“嘻嘻”两字，一字未改，附车上照片一张） */
+moments[44] = {title:'有歹徒', text:'2026年7月28日，嘻嘻。'};
+/* ♠13 来到你童年的城市（2026-11-13 下午用户语音转文字、助手润色，标题用户亲口所定，附文山木栈道牵手等照片两张） */
+moments[45] = {title:'来到你童年的城市', text:'2026年8月18日，高考后的暑假，我去到了她的家乡文山。在那里，我们一起走在她小时候上学的街道，去吃了她最喜欢吃的东西，好像我陪伴了小时候的她。我们从另外一个维度上，实现了我们一起长大的愿望。'};
+/* ♠14 你的眼泪（2026-11-13 下午用户语音转文字、助手润色，标题用户亲口所定，附七夕Hello Kitty小蛋糕照片一张） */
+moments[46] = {title:'你的眼泪', text:'2026年8月18日，七夕，这是我们在七夕那天买的小蛋糕。那天她喝醉了之后，好像连我到底是谁都不认识了，但是她看到我脸上的伤疤之后却哭了。那一刻，我也没有控制住，我也哭了。后来等她清醒了之后，问我发生了什么，我就一个劲地在那里哭，没有告诉她到底发生了什么。就这样一直哭了很久很久之后，我才告诉她：她当时喝醉的时候，看到我的伤疤时的反应。那一刻她的眼睛，我永远都不会忘记。'};
+/* ♠15 成都（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附她夜里回眸与街头牵手照片两张） */
+moments[47] = {title:'成都', text:'2026年9月13日，这是我们真正意义上在成都的第一次相见。虽然我们的大学生活没有像我们以前理想中的那么完美，但是我们还是来到了我们以前共同的目标、共同想去的城市。就像歌词里所说的一样：一起在成都的街头走一走。'};
+/* ♠16 我爱你，可以大声告诉整个宇宙（2026-11-13 下午用户语音转文字、助手润色，标题为用户口述的最后一句，附CCD背影拼图与朋友圈截图两张） */
+moments[48] = {title:'我爱你，可以大声告诉整个宇宙', text:'2026年9月13日，来到大学之后，我终于发了以前想了4年都没有敢发的那条朋友圈。再也不用，只是在放学以后才敢牵你的手，甜蜜地走。我爱你，我可以大声告诉整个宇宙。'};
+/* ♠17 重庆（2026-11-13 下午用户语音转文字、助手润色，标题用户亲口所定，附重庆火锅、洪崖洞夜景、教堂与合影五张） */
+moments[49] = {title:'重庆', text:'2026年9月25日，中秋假期，我们一起去了我们同样喜欢的城市重庆。好像我们刚进到那里之后，就能与这座城市有共鸣。我们走在那片如同绿林的城市里，看着那里的居民楼，闻到火锅的气味，好像我们本就属于这里。'};
+/* ♠18 只有快乐（2026-11-13 下午用户语音转文字、助手润色，标题助手拟待确认，附她伤心时发的搞怪滤镜自拍一张） */
+moments[50] = {title:'只有快乐', text:'2026年10月22日，因为大学的很多事情都不像她理想中的那样。后来有一天，她一个人在外面特别伤心的时候，给我发了这张照片。那一刻，我总觉得是我没有保护好她，好像是我没有像我说的那样，解决掉所有她生活中的困难。我希望有我在她的身边，她永远都只有快乐。'};
+/* ♠19 礼物（2026-11-13 下午用户亲口指定标题与正文，一字未改，附她蕾丝后的眼睛特写一张） */
+moments[51] = {title:'礼物', text:'嘻嘻。'};
+
+/* 每张牌对应的照片（用户提供，压缩后内嵌；索引与 moments 对齐，无照片的牌不列） */
+const cardPhotos = {};
+const cardVideos = {};
+/* 2026-11-13 用户决定删掉第三年空位、2025年起的卡前移替补：第34–37张（索引33–36）按真实年份属第四年♠，花色/年份按此覆盖显示 */
+const cardSuit = {33:3, 34:3, 35:3, 36:3, 37:3, 38:3};
+const suitIdx = i => (typeof cardSuit!=='undefined' && cardSuit[i]!==undefined) ? cardSuit[i] : Math.floor(i/13);
+cardPhotos[1] = ['assets/photo-001.jpg'];
+cardPhotos[2] = ['assets/photo-002.jpg'];
+cardPhotos[3] = ['assets/photo-003.jpg'];
+cardPhotos[4] = ['assets/photo-004.jpg','assets/photo-005.jpg'];
+cardPhotos[5] = ['assets/photo-006.jpg','assets/photo-007.jpg','assets/photo-008.jpg'];
+cardPhotos[6] = ['assets/photo-009.jpg'];
+cardPhotos[7] = ['assets/photo-010.jpg'];
+cardPhotos[8] = ['assets/photo-011.jpg'];
+cardPhotos[9] = ['assets/photo-012.jpg'];
+cardPhotos[10] = ['assets/photo-013.jpg'];
+cardPhotos[11] = ['assets/photo-014.jpg','assets/photo-015.jpg'];
+cardPhotos[12] = ['assets/photo-016.jpg','assets/photo-017.jpg'];
+cardPhotos[13] = ['assets/photo-018.jpg'];
+cardPhotos[14] = ['assets/photo-019.jpg'];
+cardPhotos[15] = ['assets/photo-020.jpg'];
+cardPhotos[16] = ['assets/photo-021.jpg'];
+cardPhotos[17] = ['assets/photo-022.jpg', 'assets/photo-023.jpg'];
+cardPhotos[18] = ['assets/photo-024.jpg'];
+cardPhotos[19] = ['assets/photo-025.jpg'];
+cardPhotos[21] = ['assets/photo-026.jpg'];
+cardPhotos[22] = ['assets/photo-027.jpg', 'assets/photo-028.jpg'];
+cardPhotos[23] = ['assets/photo-029.jpg', 'assets/photo-030.jpg', 'assets/photo-031.jpg'];
+cardPhotos[24] = ['assets/photo-032.jpg'];
+cardPhotos[25] = ['assets/photo-033.jpg'];
+cardPhotos[26] = ['assets/photo-034.jpg'];
+cardPhotos[27] = ['assets/photo-035.jpg','assets/photo-036.jpg','assets/photo-037.jpg'];
+cardPhotos[28] = ['assets/photo-038.jpg'];
+cardPhotos[29] = ['assets/photo-039.jpg','assets/photo-040.jpg','assets/photo-041.jpg','assets/photo-042.jpg'];
+cardPhotos[30] = ['assets/photo-043.jpg'];
+cardPhotos[31] = ['assets/photo-044.jpg','assets/photo-045.jpg'];
+cardPhotos[32] = ['assets/photo-046.jpg','assets/photo-047.jpg','assets/photo-048.jpg'];
+cardPhotos[33] = ['assets/photo-049.jpg'];
+/* ♠1 原视频本体（用户要求像照片一样放进网页，可直接播放；cardPhotos[33] 的定格图与视频同画面故阅读页不重复显示） */
+cardVideos[33] = ['assets/video-001.mp4'];
+cardPhotos[34] = ['assets/photo-050.jpg'];
+cardPhotos[35] = ['assets/photo-051.jpg'];
+cardPhotos[36] = ['assets/photo-052.jpg'];
+cardPhotos[37] = ['assets/photo-053.jpg'];
+cardPhotos[38] = ['assets/photo-054.jpg'];
+cardPhotos[39] = ['assets/photo-055.jpg', 'assets/photo-056.jpg'];
+cardPhotos[40] = ['assets/photo-057.jpg'];
+cardPhotos[41] = ['assets/photo-058.jpg'];
+cardPhotos[42] = ['assets/photo-059.jpg', 'assets/photo-060.jpg', 'assets/photo-061.jpg'];
+cardPhotos[43] = ['assets/photo-062.jpg', 'assets/photo-063.jpg', 'assets/photo-064.jpg', 'assets/photo-065.jpg', 'assets/photo-066.jpg', 'assets/photo-067.jpg'];
+cardPhotos[44] = ['assets/photo-068.jpg'];
+cardPhotos[45] = ['assets/photo-069.jpg', 'assets/photo-070.jpg'];
+cardPhotos[46] = ['assets/photo-071.jpg'];
+cardPhotos[47] = ['assets/photo-072.jpg', 'assets/photo-073.jpg'];
+cardPhotos[48] = ['assets/photo-074.jpg', 'assets/photo-075.jpg'];
+cardPhotos[49] = ['assets/photo-076.jpg', 'assets/photo-077.jpg', 'assets/photo-078.jpg', 'assets/photo-079.jpg', 'assets/photo-080.jpg'];
+cardPhotos[50] = ['assets/photo-081.jpg'];
+cardPhotos[51] = ['assets/photo-082.jpg'];
+
+const grid = document.getElementById('grid');
+const toast = document.getElementById('toast');
+const reader = document.getElementById('reader');
+let toastTimer;
+/* 已读进度（2026-11-13 修复：用户反馈 + ChatGPT 评审）：星星与进度只按“她亲手翻开读过的牌”计，不再按内容填充数；localStorage 记住进度，关掉重进不丢；读满 52 才解锁大小王。 */
+const READ_KEY = 'sisi52.read.v1';
+let readSet = new Set();
+try {
+  const raw = JSON.parse(localStorage.getItem(READ_KEY) || '[]');
+  if (Array.isArray(raw)) raw.forEach(x=>{ if(Number.isInteger(x) && x>=0 && x<52 && moments[x]) readSet.add(x); });
+} catch(e) { readSet = new Set(); }
+function saveRead(){
+  try { localStorage.setItem(READ_KEY, JSON.stringify([...readSet])); } catch(e) {}
+}
+function updateProgress(){
+  const n = readSet.size;
+  document.getElementById('count').textContent = n + ' / 52';
+  document.getElementById('bar').style.width = (n/52*100) + '%';
+  drawStars(n);
+  updateChapterCounts();
+}
+function updateChapterCounts(){
+  const tot = [0,0,0,0], got = [0,0,0,0];
+  moments.forEach((m,i)=>{ if(m){ const s = suitIdx(i); tot[s]++; if(readSet.has(i)) got[s]++; } });
+  document.querySelectorAll('.chapter').forEach(ch=>{
+    const el = ch.querySelector('.ch-count');
+    if(el) el.textContent = '已点亮 ' + got[+ch.dataset.suit] + ' / ' + tot[+ch.dataset.suit];
+  });
+}
+function markRead(i){
+  if(!moments[i] || readSet.has(i)) return;
+  readSet.add(i); saveRead(); updateProgress();
+  if(!window.matchMedia || !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    pulse = { n: readSet.size - 1, t0: performance.now() };
+    requestAnimationFrame(pulseLoop);
+  }
+  if(readSet.size >= 52){
+    unlockJokers();
+    showToast('52 颗星连成爱心了 · 大小王打开了');
+    pendingCelebrate = true;
+    setTimeout(maybeCelebrate, 420);
+  } else {
+    showToast('点亮一颗星 · ' + readSet.size + ' / 52');
+  }
+}
+function unlockJokers(){
+  const sec = document.querySelector('.joker');
+  if(!sec || sec.classList.contains('unlocked')) return;
+  sec.classList.add('unlocked');
+  document.getElementById('jokerText').innerHTML = '52 颗星已经连成爱心，大小王为你打开。<br>先翻小王，再翻大王。';
+  document.getElementById('jkSmall').onclick = openSmallJoker;
+  document.getElementById('jkBig').onclick = openBigJoker;
+}
+function lockJokers(){
+  const sec = document.querySelector('.joker');
+  if(!sec) return;
+  sec.classList.remove('unlocked');
+  document.getElementById('jokerText').innerHTML = '集齐 52 张后解锁 —— 先翻小王，再翻大王。最后的答案，不在屏幕里。<br>现在还锁着，等 52 颗星连成爱心那天。';
+  document.getElementById('jkSmall').onclick = null;
+  document.getElementById('jkBig').onclick = null;
+}
+function resetProgress(){
+  if(!confirm('要清空点亮进度、从头开始吗？')) return;
+  readSet = new Set(); saveRead();
+  lockJokers(); buildGrid('all');
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on', x.dataset.f==='all'));
+  updateProgress();
+  showToast('进度已清空，从第一颗星开始');
+}
+function showToast(msg){
+  toast.textContent = msg; toast.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>toast.classList.remove('show'), 2200);
+}
+let readerIdx = -1;
+let pendingLocate = -1;
+let pendingCelebrate = false;
+function openReader(i){
+  const m = moments[i]; if(!m) return;
+  reader.querySelectorAll('video').forEach(v=>v.pause());
+  markRead(i);
+  readerIdx = i;
+  document.getElementById('readerNav').style.display = 'flex';
+  updateReaderNav();
+  const suit = SUITS[suitIdx(i)], rank = RANKS[i%13];
+  document.getElementById('readerChapter').textContent = suit.year + ' · ' + suit.s + ' ' + rank;
+  document.getElementById('readerOrn').textContent = suit.s;
+  document.getElementById('readerOrn').style.color = suit.color;
+  document.getElementById('readerTitle').textContent = m.title;
+  document.getElementById('readerText').textContent = m.text;
+  document.querySelector('.reader .rfoot').textContent = '这颗星，已为你点亮';
+  const rp = document.getElementById('readerPhotos');
+  const imgs = (typeof cardPhotos !== 'undefined' && cardPhotos[i]) ? cardPhotos[i] : [];
+  const vids = (typeof cardVideos !== 'undefined' && cardVideos[i]) ? cardVideos[i] : [];
+  let media = vids.map(src=>'<video controls playsinline preload="metadata" src="'+src+'"></video>').join('');
+  const showImgs = (vids.length && imgs.length) ? imgs.slice(1) : imgs;
+  media += showImgs.map(src=>'<img alt="'+m.title+'" decoding="async" src="'+src+'">').join('');
+  rp.innerHTML = media;
+  rp.classList.toggle('has', media.length>0);
+  document.querySelector('.reader .sheet').scrollTop = 0;
+  reader.classList.add('open');
+}
+function syncFlips(){
+  readSet.forEach(i=>{
+    const el = grid.querySelector('[data-i="'+i+'"]');
+    if(el) el.classList.add('flipped');
+  });
+}
+function maybeCelebrate(){
+  if(!pendingCelebrate) return;
+  if(reader.classList.contains('open')) return;
+  pendingCelebrate = false;
+  const sec = document.querySelector('.joker');
+  if(!sec) return;
+  sec.scrollIntoView({behavior:'smooth', block:'center'});
+  sec.classList.add('celebrate');
+  setTimeout(()=>sec.classList.remove('celebrate'), 4400);
+}
+function closeReader(){
+  reader.querySelectorAll('video').forEach(v=>v.pause());
+  reader.classList.remove('open');
+  readerIdx = -1;
+  syncFlips();
+  if(pendingLocate >= 0){
+    const idx = pendingLocate; pendingLocate = -1;
+    const el = grid.querySelector('[data-i="'+idx+'"]');
+    if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth', block:'center'}), 90);
+  }
+  setTimeout(maybeCelebrate, 60);
+}
+document.getElementById('readerClose').onclick = closeReader;
+reader.addEventListener('click', e=>{ if(e.target===reader) closeReader(); });
+function updateReaderNav(){
+  const pos = document.getElementById('navPos');
+  if(readerIdx < 0){ pos.textContent = ''; return; }
+  pos.textContent = '第 ' + (readerIdx+1) + ' / 52 张 · ' + SUITS[suitIdx(readerIdx)].year;
+  document.getElementById('navPrev').classList.toggle('off', !moments.slice(0, readerIdx).some(Boolean));
+  document.getElementById('navNext').classList.toggle('off', !moments.slice(readerIdx+1).some(Boolean));
+}
+function navReader(dir){
+  if(readerIdx < 0) return;
+  let j = readerIdx + dir;
+  while(j >= 0 && j < 52 && !moments[j]) j += dir;
+  if(j < 0 || j >= 52) return;
+  openReader(j);
+}
+document.getElementById('navPrev').onclick = ()=>navReader(-1);
+document.getElementById('navNext').onclick = ()=>navReader(1);
+let touchX = null;
+reader.addEventListener('touchstart', e=>{ touchX = e.changedTouches[0].clientX; }, {passive:true});
+reader.addEventListener('touchend', e=>{
+  if(touchX === null || readerIdx < 0) return;
+  const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+  if(Math.abs(dx) > 56) navReader(dx < 0 ? 1 : -1);
+}, {passive:true});
+
+function buildGrid(filter){
+  grid.innerHTML = '';
+  let lastSuit = -1;
+  moments.forEach((m, i)=>{
+    const suit = SUITS[suitIdx(i)], rank = RANKS[i%13];
+    if(filter && filter!=='all' && suit.s!==filter) return;
+    if(filter==='all' && suitIdx(i)!==lastSuit){
+      lastSuit = suitIdx(i);
+      const ch = document.createElement('div');
+      ch.className = 'chapter'; ch.dataset.suit = lastSuit; ch.id = 'chapter-' + lastSuit;
+      ch.innerHTML = '<span class="ch-s" style="color:'+suit.color+'">'+suit.s+'</span>' +
+        '<span class="ch-y">'+suit.year+'</span>' +
+        '<span class="ch-r">'+suit.range+'</span>' +
+        '<span class="ch-count"></span>';
+      grid.appendChild(ch);
+    }
+    const el = document.createElement('div');
+    el.className = 'card' + (m ? '' : ' locked') + (readSet.has(i) ? ' flipped' : '');
+    el.dataset.i = i;
+    el.style.setProperty('--d', i%13);
+    const idx = '<div class="idx tl"><span class="r" style="color:'+suit.color+'">'+rank+'</span><span class="s" style="color:'+suit.color+'">'+suit.s+'</span></div>' +
+                '<div class="idx br"><span class="r" style="color:'+suit.color+'">'+rank+'</span><span class="s" style="color:'+suit.color+'">'+suit.s+'</span></div>';
+    el.innerHTML =
+      '<div class="card-inner">' +
+        '<div class="face">' + idx + (readSet.has(i) && m ? '<div class="readmark">✦</div>' : '') +
+          '<div class="big" style="color:'+suit.color+'">'+suit.s+'</div>' +
+          (m ? '<div class="yr">'+suit.year+'</div>'
+             : '<div class="todo">尚未写下</div><div class="yr">'+suit.year+'</div>') +
+        '</div>' +
+        '<div class="face back">' + (readSet.has(i) && m ? '<div class="readmark">✦</div>' : '') + (m
+          ? '<div class="ch">'+suit.year+' · '+suit.s+' '+rank+'</div>' +
+            '<div class="ttl">'+m.title+'</div>' +
+            '<div class="orn" style="color:'+suit.color+'">'+suit.s+'</div>' +
+            '<div class="txt">'+m.text+'</div>' +
+            '<div class="more">轻点 · 展开全文</div>'
+          : '<div class="emptyt">这一页，留给以后。</div>') +
+        '</div>' +
+      '</div>';
+    el.onclick = ()=>{
+      const flipped = el.classList.contains('flipped');
+      if(!flipped){
+        el.classList.add('flipped');
+        if(!m) showToast(suit.year + ' ' + suit.s + rank + ' · 尚未写下');
+        else markRead(i);
+      } else if(m){
+        openReader(i);
+      } else {
+        el.classList.remove('flipped');
+      }
+    };
+    grid.appendChild(el);
+  });
+  updateProgress();
+}
+document.getElementById('filters').addEventListener('click', e=>{
+  const b = e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); buildGrid(b.dataset.f);
+});
+function drawOne(){
+  const filledIdx = moments.map((m,i)=>m?i:null).filter(x=>x!==null);
+  if(!filledIdx.length){
+    const first = document.querySelector('.card');
+    if(first){ first.scrollIntoView({behavior:'smooth', block:'center'}); first.classList.add('flipped'); }
+    showToast('牌都还空着');
+    return;
+  }
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on', x.dataset.f==='all'));
+  buildGrid('all');
+  const unreadIdx = filledIdx.filter(x=>!readSet.has(x));
+  /* 抽牌按年份递推（2026-11-13 用户要求）：只在最早还没读满的年份里随机抽，该年读满才进入下一年，不跨年乱抽。 */
+  let poolIdx = filledIdx;
+  if(unreadIdx.length){
+    let minSuit = 99;
+    unreadIdx.forEach(x=>{ const s = suitIdx(x); if(s < minSuit) minSuit = s; });
+    poolIdx = unreadIdx.filter(x=>suitIdx(x) === minSuit);
+  }
+  const pick = poolIdx[Math.floor(Math.random()*poolIdx.length)];
+  showToast('抽到一张');
+  flyCard(pick, ()=>{ pendingLocate = pick; openReader(pick); });
+}
+function flyCard(pick, done){
+  const deckEl = document.getElementById('deck');
+  const suit = SUITS[suitIdx(pick)], m = moments[pick];
+  const r = deckEl.getBoundingClientRect();
+  const fly = document.createElement('div');
+  fly.className = 'flycard';
+  fly.style.left = r.left + 'px'; fly.style.top = r.top + 'px';
+  fly.style.width = r.width + 'px'; fly.style.height = r.height + 'px';
+  fly.innerHTML = '<div class="fly-in"><div class="fly-f fly-front">✦</div>' +
+    '<div class="fly-f fly-back"><div class="fly-ch">'+suit.year+' · '+suit.s+' '+RANKS[pick%13]+'</div>' +
+    '<div class="fly-ttl">'+(m ? m.title : '')+'</div></div></div>';
+  document.body.appendChild(fly);
+  const tx = innerWidth/2 - 95 - r.left, ty = innerHeight/2 - 133 - r.top;
+  requestAnimationFrame(()=>{
+    fly.style.transform = 'translate('+tx+'px,'+ty+'px)';
+    fly.style.width = '190px'; fly.style.height = '266px';
+    fly.querySelector('.fly-in').style.transform = 'rotateY(180deg)';
+  });
+  setTimeout(()=>fly.classList.add('out'), 900);
+  setTimeout(()=>{ fly.remove(); if(done) done(); }, 1030);
+}
+document.getElementById('deck').onclick = drawOne;
+document.getElementById('drawBtn').onclick = drawOne;
+
+/* 星空：已点亮的星是暖亮的，未点亮的是淡淡的 */
+const cv = document.getElementById('stars'), ctx = cv.getContext('2d');
+let stars = [];
+function sizeCanvas(){ cv.width = innerWidth; cv.height = innerHeight;
+  stars = Array.from({length:130}, ()=>({x:Math.random()*cv.width, y:Math.random()*cv.height,
+    r:Math.random()*1.6+.4, a:Math.random()*.5+.15, tw:Math.random()*Math.PI*2}));
+}
+/* 52 颗瞬间之星（2026-11-13 与 ChatGPT 讨论后加强）：与背景星分离，按爱心曲线固定排布，亮星暖黄带光晕，新点亮时有扩散脉冲，集齐 52 连线成爱心。 */
+let pulse = null;
+function heartPoints(){
+  const pts = [];
+  const cx = cv.width/2, cy = cv.height*0.36;
+  const sc = Math.min(cv.width/34, cv.height/38);
+  for(let k=0;k<52;k++){
+    const t = (k/52)*Math.PI*2;
+    const x = 16*Math.pow(Math.sin(t),3);
+    const y = 13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t);
+    pts.push({x: cx + x*sc, y: cy - y*sc});
+  }
+  return pts;
+}
+function drawStars(lit){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  stars.forEach((s)=>{
+    ctx.globalAlpha = s.a;
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
+  });
+  const hp = heartPoints();
+  if(lit >= 52){
+    ctx.globalAlpha = .45; ctx.strokeStyle = '#ffd9e2'; ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    hp.forEach((pt,k)=>{ if(k===0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y); });
+    ctx.closePath(); ctx.stroke();
+  }
+  hp.forEach((pt,k)=>{
+    if(k < lit){
+      ctx.globalAlpha = .95; ctx.fillStyle = '#fff6c9';
+      ctx.beginPath(); ctx.arc(pt.x, pt.y, 2.7, 0, Math.PI*2); ctx.fill();
+      ctx.globalAlpha = .32; ctx.beginPath(); ctx.arc(pt.x, pt.y, 6.5, 0, Math.PI*2); ctx.fill();
+      if(pulse && pulse.n === k){
+        const e2 = (performance.now() - pulse.t0)/900;
+        if(e2 < 1){
+          ctx.globalAlpha = .55*(1-e2); ctx.strokeStyle = '#ffe9a8'; ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.arc(pt.x, pt.y, 6 + e2*26, 0, Math.PI*2); ctx.stroke();
+        }
+      }
+    } else {
+      ctx.globalAlpha = .15; ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(pt.x, pt.y, 1.6, 0, Math.PI*2); ctx.fill();
+    }
+  });
+  ctx.globalAlpha = 1;
+}
+function pulseLoop(){
+  if(!pulse) return;
+  drawStars(readSet.size);
+  if(performance.now() - pulse.t0 < 920) requestAnimationFrame(pulseLoop);
+  else { pulse = null; drawStars(readSet.size); }
+}
+/* 大小王（2026-11-13 用户定稿）：分两张——小王「永远」先出；不加录音。
+   大王（2026-11-13 晚用户改定）：网页里不再放表白信。翻开大王只有一束花和「向左看」三个字——
+   那一刻用户本人会捧着真花站在她左边当面表白，网页只负责把她引向现实。已与 ChatGPT 讨论（花束配色/左侧动线/动画节奏）。 */
+const jokerSmall = {title:'永远', text:'我爱上她，是在和她在一起的每一个瞬间。'};
+const bouquetSVG = `<svg class="bqSvg" viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="一束花">
+<defs>
+  <radialGradient id="glowG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffd9e2" stop-opacity=".85"/><stop offset="100%" stop-color="#ffd9e2" stop-opacity="0"/></radialGradient>
+  <radialGradient id="roseG" cx="42%" cy="38%" r="72%"><stop offset="0%" stop-color="#f9d3dc"/><stop offset="100%" stop-color="#ec9fb4"/></radialGradient>
+  <radialGradient id="creamG" cx="42%" cy="35%" r="75%"><stop offset="0%" stop-color="#fffaf0"/><stop offset="100%" stop-color="#f6e2bd"/></radialGradient>
+  <linearGradient id="lavG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#cabdF2"/><stop offset="100%" stop-color="#a08ed8"/></linearGradient>
+  <linearGradient id="paperB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d9cff3"/><stop offset="100%" stop-color="#bfb1e4"/></linearGradient>
+  <linearGradient id="paperF" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fffaf0"/><stop offset="100%" stop-color="#fbeed9"/></linearGradient>
+</defs>
+<ellipse cx="50" cy="150" rx="48" ry="76" fill="url(#glowG)"/>
+<path d="M92,158 L208,158 L182,324 L118,324 Z" fill="url(#paperB)"/>
+<g stroke="#7fa383" stroke-width="3" fill="none" stroke-linecap="round">
+  <path d="M150,118 C149,168 149,206 150,246"/>
+  <path d="M116,132 C126,172 136,208 144,244"/>
+  <path d="M186,134 C176,174 164,210 156,244"/>
+  <path d="M94,104 C108,150 124,196 138,240"/>
+  <path d="M208,102 C194,148 178,196 162,240"/>
+</g>
+<g fill="#9dbb95">
+  <ellipse cx="98" cy="176" rx="17" ry="7" transform="rotate(-38 98 176)"/>
+  <ellipse cx="204" cy="172" rx="17" ry="7" transform="rotate(34 204 172)"/>
+  <ellipse cx="118" cy="150" rx="14" ry="6" transform="rotate(-18 118 150)"/>
+  <ellipse cx="186" cy="150" rx="14" ry="6" transform="rotate(20 186 150)"/>
+</g>
+<g>
+  <path d="M90,138 C86,112 84,92 86,66" stroke="#7fa383" stroke-width="2.5" fill="none"/>
+  <ellipse cx="86" cy="62" rx="5.5" ry="9" fill="url(#lavG)"/>
+  <ellipse cx="83" cy="80" rx="5" ry="8" fill="url(#lavG)" opacity=".85"/>
+  <ellipse cx="88" cy="98" rx="5" ry="8" fill="url(#lavG)" opacity=".7"/>
+  <ellipse cx="85" cy="116" rx="4.5" ry="7" fill="url(#lavG)" opacity=".55"/>
+  <path d="M212,136 C216,110 218,90 216,64" stroke="#7fa383" stroke-width="2.5" fill="none"/>
+  <ellipse cx="216" cy="60" rx="5.5" ry="9" fill="url(#lavG)"/>
+  <ellipse cx="219" cy="78" rx="5" ry="8" fill="url(#lavG)" opacity=".85"/>
+  <ellipse cx="214" cy="96" rx="5" ry="8" fill="url(#lavG)" opacity=".7"/>
+  <ellipse cx="217" cy="114" rx="4.5" ry="7" fill="url(#lavG)" opacity=".55"/>
+</g>
+<g>
+  <circle cx="150" cy="60" r="19" fill="url(#creamG)"/>
+  <path d="M138,58 a12,12 0 1,1 12,12 a7.5,7.5 0 1,0 -7.5,-7.5" stroke="#ddba7d" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <circle cx="148" cy="112" r="30" fill="url(#roseG)"/>
+  <path d="M134,106 a16,16 0 1,1 16,16 a10,10 0 1,0 -10,-10 a5.5,5.5 0 1,1 5.5,5.5" stroke="#cd748f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <circle cx="196" cy="128" r="22" fill="url(#roseG)"/>
+  <path d="M185,123 a11.5,11.5 0 1,1 11.5,11.5 a7,7 0 1,0 -7,-7" stroke="#cd748f" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path d="M106,152 C94,132 98,106 107,96 C111,108 115,108 119,96 C128,106 132,132 120,152 C115,156 111,156 106,152 Z" fill="url(#creamG)"/>
+  <path d="M107,100 C110,124 112,138 113,150 M119,100 C116,124 114,138 113,150" stroke="#ddba7d" stroke-width="1.6" fill="none" opacity=".7"/>
+</g>
+<g fill="#a9c3ea">
+  <g transform="translate(122,80)"><circle cx="0" cy="-6" r="4.6"/><circle cx="5.7" cy="-1.9" r="4.6"/><circle cx="3.5" cy="4.9" r="4.6"/><circle cx="-3.5" cy="4.9" r="4.6"/><circle cx="-5.7" cy="-1.9" r="4.6"/><circle r="2.4" fill="#f7e3a1"/></g>
+  <g transform="translate(182,82)"><circle cx="0" cy="-6" r="4.6"/><circle cx="5.7" cy="-1.9" r="4.6"/><circle cx="3.5" cy="4.9" r="4.6"/><circle cx="-3.5" cy="4.9" r="4.6"/><circle cx="-5.7" cy="-1.9" r="4.6"/><circle r="2.4" fill="#f7e3a1"/></g>
+  <g transform="translate(206,158) scale(.82)"><circle cx="0" cy="-6" r="4.6"/><circle cx="5.7" cy="-1.9" r="4.6"/><circle cx="3.5" cy="4.9" r="4.6"/><circle cx="-3.5" cy="4.9" r="4.6"/><circle cx="-5.7" cy="-1.9" r="4.6"/><circle r="2.4" fill="#f7e3a1"/></g>
+</g>
+<g fill="#fffdf6">
+  <circle cx="128" cy="140" r="3"/><circle cx="172" cy="146" r="3"/><circle cx="160" cy="88" r="2.6"/><circle cx="98" cy="142" r="2.6"/><circle cx="188" cy="102" r="2.6"/>
+</g>
+<path d="M104,178 L196,178 L174,324 L126,324 Z" fill="url(#paperF)"/>
+<path d="M104,178 L150,216 L196,178 L196,192 L150,230 L104,192 Z" fill="#f7e8cf"/>
+<g>
+  <path d="M144,262 C124,279 103,289 82,293 L90,307 C113,301 134,286 150,268 Z" fill="#eeb3c2"/>
+  <path d="M156,262 C169,277 184,285 198,289 L192,301 C177,295 163,283 152,268 Z" fill="#f3c3d0"/>
+  <ellipse cx="127" cy="252" rx="21" ry="11" transform="rotate(-24 127 252)" fill="#f0b7c6"/>
+  <ellipse cx="173" cy="252" rx="21" ry="11" transform="rotate(24 173 252)" fill="#f6c9d4"/>
+  <circle cx="150" cy="256" r="7.5" fill="#e59db2"/>
+</g>
+<g fill="#f2b9c9">
+  <path class="petal p1" transform="translate(48,118)" d="M0,0 C8,-7 19,-6 23,1 C16,8 6,7 0,0 Z"/>
+  <path class="petal p2" transform="translate(30,182) scale(.8)" d="M0,0 C8,-7 19,-6 23,1 C16,8 6,7 0,0 Z"/>
+  <path class="petal p3" transform="translate(58,214) scale(.62)" d="M0,0 C8,-7 19,-6 23,1 C16,8 6,7 0,0 Z"/>
+</g>
+<path transform="translate(64,196) scale(.85)" d="M0,3 C-2,-3 -12,-4 -12,3 C-12,8 -5,11 0,16 C5,11 12,8 12,3 C12,-4 2,-3 0,3 Z" fill="#e58aa5" opacity=".8"/>
+</svg>`;
+function openJokerReader(chapter, orn, ornColor, title, bodyHTML, foot){
+  readerIdx = -1;
+  document.getElementById('readerNav').style.display = 'none';
+  document.getElementById('readerText').textContent = '';
+  document.getElementById('readerChapter').textContent = chapter;
+  const ro = document.getElementById('readerOrn'); ro.textContent = orn; ro.style.color = ornColor;
+  document.getElementById('readerTitle').textContent = title;
+  const rp = document.getElementById('readerPhotos'); rp.innerHTML = ''; rp.classList.remove('has');
+  document.getElementById('readerText').innerHTML = bodyHTML;
+  document.querySelector('.reader .rfoot').textContent = foot;
+  document.querySelector('.reader .sheet').scrollTop = 0;
+  reader.classList.add('open');
+}
+function openSmallJoker(){
+  openJokerReader('第 53 张 · 小王', '✦', '#8f86c9', jokerSmall.title,
+    '<p>' + jokerSmall.text + '</p><button class="jkbtn" id="toBigJoker">翻 开 大 王</button>',
+    '还有一张，在等你翻开');
+  document.getElementById('toBigJoker').onclick = openBigJoker;
+}
+function openBigJoker(){
+  const body = '<div class="bqScene">' + bouquetSVG + '<div class="lookLeft">向左看</div></div>';
+  openJokerReader('第 53 张 · 大王', '♛', '#cf5f76', '？', body, '四周年 · 2026-11-19');
+}
+(function initJoker(){
+  if(readSet.size >= 52) unlockJokers();
+  const rl = document.getElementById('resetLink');
+  if(rl) rl.onclick = resetProgress;
+})();
+
+sizeCanvas(); buildGrid('all');
+addEventListener('resize', ()=>{ sizeCanvas(); drawStars(readSet.size); });
+</script>
+</body>
+</html>
