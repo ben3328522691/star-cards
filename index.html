@@ -514,8 +514,23 @@ function lockJokers(){
   document.getElementById('jkSmall').onclick = null;
   document.getElementById('jkBig').onclick = null;
 }
+let resetArmTimer = null;
+function disarmReset(){
+  const rl = document.getElementById('resetLink');
+  clearTimeout(resetArmTimer);
+  if(rl && rl.dataset.armed){ delete rl.dataset.armed; if(rl.dataset.orig) rl.textContent = rl.dataset.orig; rl.style.color = ''; }
+}
 function resetProgress(){
-  if(!confirm('要清空点亮进度、从头开始吗？')) return;
+  const rl = document.getElementById('resetLink');
+  if(rl && !rl.dataset.armed){
+    rl.dataset.armed = '1';
+    rl.dataset.orig = rl.textContent;
+    rl.textContent = '确定要清空吗？再点一次确认';
+    rl.style.color = '#c2637e';
+    resetArmTimer = setTimeout(disarmReset, 3000);
+    return;
+  }
+  disarmReset();
   readSet = new Set(); saveRead();
   lockJokers(); buildGrid('all');
   document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on', x.dataset.f==='all'));
